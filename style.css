@@ -137,8 +137,8 @@ body {
     background-color: #fe8daa;
     border-radius: 5px;
     height: 100%;
-    width: 50%;
-    transition: widht 0.1s linear;
+    width: 0%;
+    transition: width 0.1s linear;
 }
 
 
