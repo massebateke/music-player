@@ -8,11 +8,12 @@ const progressContainer = document.querySelector('.progress-container');
 const title = document.querySelector('#title');
 const cover = document.querySelector('#cover');
 
+
 //Song title
-const songs = ['CYANIDE REMIX (feat. Koffee)','Don Toliver - No Idea','SZA - Used ft. Don Toliver','Flo Milli - Never Lose Me','Jungle - Back On 74','SAULT - Masterpiece'];
+const songs = ['CYANIDE REMIX (feat. Koffee)','Don Toliver - No Idea','SZA - Used ft. Don Toliver','Flo Milli - Never Lose Me','Jungle - Back On 74','SAULT - Masterpiece','Drake - One Dance (Lyrics) ft. Wizkid & Kyla'];
 
 //Keep tracks of song
-let songIndex = 0; 
+let songIndex = 0; //means thet cyanide is the default song
 
 //Initially load song into the document object model
 loadSong(songs[songIndex]);
@@ -50,6 +51,31 @@ function prevSong(){
     loadSong(songs[songIndex])
 
     playSong()
+
+    //changement de couleur background
+    
+    function createHex() {
+        var hexCode1 = "";
+        var hexValues1 = "0123456789abcdef";
+        
+        for ( var i = 0; i < 6; i++ ) {
+          hexCode1 += hexValues1.charAt(Math.floor(Math.random() * hexValues1.length));
+        }
+        return hexCode1;
+      }
+      
+      function generate() {
+        
+        var deg = Math.floor(Math.random() *360);
+        
+        var gradient = "linear-gradient(" + deg + "deg, " + "#" + createHex() + ", " + "#" + createHex() +")";
+        
+        document.getElementById("bg").style.background = gradient;
+        
+        console.log(hexCode1, hexCode2);
+       
+      }
+      document.onload = generate();
 }
 
 function nextSong(){
@@ -62,9 +88,33 @@ function nextSong(){
     loadSong(songs[songIndex])
 
     playSong()
+
+    //changement de couleur background
+    function createHex() {
+        var hexCode1 = "";
+        var hexValues1 = "0123456789abcdef";
+        
+        for ( var i = 0; i < 6; i++ ) {
+          hexCode1 += hexValues1.charAt(Math.floor(Math.random() * hexValues1.length));
+        }
+        return hexCode1;
+      }
+      
+      function generate() {
+        
+        var deg = Math.floor(Math.random() *360);
+        
+        var gradient = "linear-gradient(" + deg + "deg, " + "#" + createHex() + ", " + "#" + createHex() +")";
+        
+        document.getElementById("bg").style.background = gradient;
+        
+        console.log(hexCode1, hexCode2);
+       
+      }
+      document.onload = generate();
 }
 
-function updateProgress(e){  
+function updateProgress(e){ 
     const {duration, currentTime} = e.srcElement
     const progressPercent = (currentTime / duration) * 100
     progress.style.width = `${progressPercent}%`
@@ -79,7 +129,6 @@ function setProgress(e){
     audio.currentTime = (clickX / width) * duration
 
 }
-
 
 //Event listeners
 playBtn.addEventListener('click', () => { 
