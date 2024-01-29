@@ -10,7 +10,7 @@ const cover = document.querySelector('#cover');
 
 
 //Song title
-const songs = ['CYANIDE REMIX (feat. Koffee)','Don Toliver - No Idea','SZA - Used ft. Don Toliver','Flo Milli - Never Lose Me','Jungle - Back On 74','SAULT - Masterpiece','Drake - One Dance (Lyrics) ft. Wizkid & Kyla'];
+const songs = ['CYANIDE REMIX (feat. Koffee)','Don Toliver - No Idea','SZA - Used ft. Don Toliver','Flo Milli - Never Lose Me','Jungle - Back On 74','SAULT - Masterpiece','Drake - One Dance ft. Wizkid & Kyla'];
 
 //Keep tracks of song
 let songIndex = 0; //means thet cyanide is the default song
